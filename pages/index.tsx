@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>{t("title")}</h1>
+        <h1 className="text-3xl font-bold underline">{t("title")}</h1>
 
         <p className={styles.description}>{t("content")}</p>
       </main>
