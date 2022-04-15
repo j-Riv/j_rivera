@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "collect.js": "^4.32.0",
     "html-react-parser": "^1.4.10",
     "next": "12.1.4",
     "next-intl": "^2.6.0",
