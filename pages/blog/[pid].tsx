@@ -24,12 +24,14 @@ const Blog: NextPage<Props> = ({ posts }) => {
 export default Blog;
 
 interface ServerProps {
-  params: any;
+  params: {
+    pid: string;
+  };
 }
 
 export async function getServerSideProps({ params }: ServerProps) {
   const postsPerPage = process.env.NEXT_PUBLIC_POSTS_PER_PAGE;
-  const skip = params.page ? (Number(params.page) - 1) * postsPerPage : 0;
+  const skip = params.pid ? (Number(params.pid) - 1) * postsPerPage : 0;
   const data: Post[] = await getAllPosts(postsPerPage, skip);
 
   return {

@@ -1,5 +1,5 @@
 import { getAllPostsByCategory } from "../../../../lib/api";
-import Page from "./[page]";
+import Page from "./[pid]";
 import { Post } from "../../../../types/cockpit";
 
 export default Page;

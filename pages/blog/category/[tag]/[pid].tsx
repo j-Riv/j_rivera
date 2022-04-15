@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import Head from "next/head";
-import Image from "next/image";
 import styles from "../../../../styles/Home.module.css";
 import { getAllPostsByCategory } from "../../../../lib/api";
 import { Post } from "../../../../types/cockpit";
@@ -31,12 +29,12 @@ export default CategoryPage;
 interface ServerProps {
   params: {
     tag: string;
-    page: string;
+    pid: string;
   };
 }
 
 export async function getServerSideProps({ params }: ServerProps) {
-  const data: Post[] = await getAllPostsByCategory(params.tag, params.page);
+  const data: Post[] = await getAllPostsByCategory(params.tag, params.pid);
 
   return {
     props: {
