@@ -48,6 +48,7 @@ export interface Post {
   };
   image_alt: string;
   meta_description: string;
+  content: string;
   tags: string[];
   title_slug: string;
   _mby: string;

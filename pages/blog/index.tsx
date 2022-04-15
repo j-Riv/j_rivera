@@ -2,14 +2,10 @@ import { getAllPosts } from "../../lib/api";
 import Page from "./[page]";
 import { Post } from "../../types/cockpit";
 
-interface Props {
-  posts: Post[];
-}
-
 export default Page;
 
 interface ServerProps {
-  params: any;
+  params: {};
 }
 
 export async function getServerSideProps({ params }: ServerProps) {

@@ -5,7 +5,9 @@ import { Post } from "../../../../types/cockpit";
 export default Page;
 
 interface ServerProps {
-  params: any;
+  params: {
+    tag: string;
+  };
 }
 
 export async function getServerSideProps({ params }: ServerProps) {
