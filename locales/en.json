@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "HOME",
+    "resume": "CV"
+  },
+  "index": {
+    "title": "I am j-Riv",
+    "about": "ABOUT ME",
+    "skills": "SKILLS",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "iam": "I AM"
+  },
+  "about": {
+    "title": "ABOUT ME",
+    "content": "My Name is José Alfredo Rivera Turcios and I am a Full Stack Web Developer based out of Southern California."
+  },
+  "skills": {
+    "title": "SKILLS",
+    "spokenLang": {
+      "title": "Fluent Languages",
+      "content": "English, Spanish"
+    },
+    "programmingLang": {
+      "title": "Programming Languages",
+      "content": "JavaScript, PHP, Python"
+    },
+    "webTech": {
+      "title": "Web Technologies",
+      "content": "NodeJS, Vue, React, SQL, WordPress, Shopify, Git"
+    },
+    "software": {
+      "title": "Software",
+      "content": "Adobe Illustrator, Adobe InDesign, Adobe Photoshop"
+    }
+  },
+  "blog": {
+    "title": "BLOG"
+  },
+  "contact": {
+    "title": "CONTACT ME",
+    "message": "Want to build something together? That's great! Send me an email and I will get back to you as soon as possible!",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Submit",
+      "reset": "Reset",
+      "success": "Email sent successfully",
+      "error": "Error in sending email"
+    }
+  },
+  "footer": {
+    "madeWith": "Made with"
+  },
+  "resume": {
+    "summary": "Summary",
+    "summaryText": "Versatile Full-Stack Web Developer with 5+ years of experience designing, developing, and managing complex e-commerce sites and internal applications. Enjoys integrating technologies to solve problems. Passionate about approaching programming challenges from different angles and collaborating with others to create meaningful web applications. Outstanding verbal and written communication skills coupled with strong project management abilities.Hard working and able to multitask efficiently.Fluent in English and Spanish.",
+    "technicalSkills": "Technical Skills",
+    "operatingSystems": "Operating Systems",
+    "programming": "Programming",
+    "applications": "Applications",
+    "experience": "Experience",
+    "fullStackDeveloper": "Full Stack Web Developer, Senior Developer, System Administrator",
+    "suaveDate": "July 2014 - Current",
+    "suaveDesc": [
+      "Design and develop applications that provide technical solutions for business challenges.",
+      "Perform website design and development for Suavecito Pomade and all subsidiary companies.",
+      "Developed and maintained custom APIs to communicate, synchronize and update product information with 3rd party APIs.",
+      "Responsible for integrating 3rd party apps and APIs into our current CMS / E-commerce platform.",
+      "Developed and maintained React based embedded apps for our E-commerce platform (Shopify).",
+      "Developed and deployed custom back ends (NodeJS) for the React E-commerce apps.",
+      "Managed and maintained local and cloud servers (AWS) and databases (MySQL, PostgreSQL, MongoDB).",
+      "Developed and deployed custom integrations to synchronize data between 3rd party APIs and NetSuite.",
+      "Developed and deployed miscellaneous projects including custom landing pages, product subscription apps and internal sales and activity reporting apps."
+    ],
+    "suaveTechUsed": "Technologies used: JavaScript, TypeScript, NodeJS, React, Vue, Next.js, Gatsby, Redux, Vuex, HTML, PHP, SCSS, CSS, jQuery, SQL, Rest, GraphQL, JSON, Docker, Containers.",
+    "education": "Education",
+    "bootcampCertificate": "Bootcamp Certificate",
+    "uci": "University of California Irvine, Irvine, CA",
+    "uciDesc": "A 24-week intensive program focues on gaining knowledge and technical programming skills to build dynamic end-to-end web applications. Computer Science applied to JavaScript.",
+    "occ": "Orange Coast College, Costa Mesa, CA",
+    "occDesc": "Coursework completed in Computer Science and Information Systems.",
+    "gwc": "Golden West College, Huntington Beach, CA",
+    "gwcDesc": "Coursework completed in Computer Science, Information Systems, Digital Media, and Graphic Design.",
+    "download": "Download"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "INICIO",
+    "resume": "CV"
+  },
+  "index": {
+    "title": "Yo Soy j-Riv",
+    "about": "SOBRE MI",
+    "skills": "MAESTRÍA",
+    "contact": "CONTACTO"
+  },
+  "hero": {
+    "iam": "YO SOY"
+  },
+  "about": {
+    "title": "SOBRE MI",
+    "content": "Mi nombre es José Alfredo Rivera Turcios y soy un Desarrollador Web Full Stack con sede en el sur de California."
+  },
+  "skills": {
+    "title": "MAESTRÍA",
+    "spokenLang": {
+      "title": "Idiomas",
+      "content": "Ingles, Español"
+    },
+    "programmingLang": {
+      "title": "Lenguajes de Programación",
+      "content": "JavaScript, PHP, Python"
+    },
+    "webTech": {
+      "title": "Tecnologías Web",
+      "content": "Node, Vue, React, SQL, WordPress, Shopify, Git"
+    },
+    "software": {
+      "title": "Software",
+      "content": "Adobe Illustrator, Adobe InDesign, Adobe Photoshop"
+    }
+  },
+  "blog": {
+    "title": "BLOG"
+  },
+  "contact": {
+    "title": "CONTÁCTAME",
+    "message": "¿Quieres construir algo juntos? ¡Eso es genial! ¡Envíame un correo electrónico y te responderé lo antes posible!",
+    "fields": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "subject": "Sujeto",
+      "message": "Mensaje",
+      "submit": "Enviar",
+      "reset": "Reiniciar",
+      "success": "Correo electrónico enviado con éxito",
+      "error": "Error al enviar correo electrónico"
+    }
+  },
+  "footer": {
+    "madeWith": "Hecho con"
+  },
+  "resume": {
+    "summary": "Sumario",
+    "summaryText": "Desarrollador Web Full-Stack con más de 5 años + de experiencia diseñando, desarrollando y administrando sitios complejos de comercio electrónico y aplicaciones internas. Disfruta integrando tecnologías para resolver problemas. Apasionado por abordar los desafíos de programación desde diferentes ángulos y colaborar con otros para crear aplicaciones web significativas. Excelentes habilidades de comunicación verbal y escrita junto con fuertes habilidades de gestión de proyectos.Trabajando duro y capaz de realizar múltiples tareas de manera eficiente.Fluido en inglés y español.",
+    "technicalSkills": "Maestría Técnicas",
+    "operatingSystems": "Sistemas Operativos",
+    "programming": "Programación",
+    "applications": "Aplicaciones",
+    "experience": "Experiencia",
+    "fullStackDeveloper": "Desarrollador Full Stack Web, Administrador de Sistema",
+    "suaveDate": "Julio de 2014 - Actual",
+    "suaveDesc": [
+      "Diseñar y desarrollar aplicaciones que aporten soluciones técnicas a los retos empresariales.",
+      "Realizar el diseño y desarrollo del sitio web para Suavecito y todas las compañías subsidiarias.",
+      "API personalizadas desarrolladas y mantenidas para comunicar, sincronizar y actualizar la información del producto con API de terceros.",
+      "Responsable de integrar aplicaciones y API de terceros en nuestra plataforma de comercio electrónico/CMS actual.",
+      "Desarrollé y mantuve aplicaciones integradas basadas en React para nuestra plataforma de comercio electrónico (Shopify).",
+      "Desarrollo e implementación de back-end personalizados (NodeJS) para las aplicaciones de comercio electrónico React.",
+      "Administración y mantenimiento de servidores locales y en la nube (AWS) y bases de datos (MySQL, PostgreSQL, MongoDB).",
+      "Desarrollé e implementé integraciones personalizadas para sincronizar datos entre API de terceros y NetSuite.",
+      "Desarrollé e implementé varios proyectos, incluidas páginas de inicio personalizadas, aplicaciones de suscripción de productos y aplicaciones de informes de actividades y ventas internas."
+    ],
+    "suaveTechUsed": "Tecnologías utilizadas: JavaScript, TypeScript, NodeJS, React, Vue, Next.js, Gatsby, Redux, Vuex, HTML, PHP, SCSS, CSS, jQuery, SQL, Rest, GraphQL, JSON, Docker, Containers.",
+    "education": "Educación",
+    "bootcampCertificate": "Certificado Bootcamp",
+    "uci": "Universidad de California Irvine, Irvine, CA",
+    "uciDesc": "Un programa intensivo de 24 semanas se centra en adquirir conocimientos y habilidades de programación técnica para crear aplicaciones web dinámicas de extremo a extremo. La informática se aplicó a Javascript.",
+    "occ": "Orange Coast College, Costa Mesa, CA",
+    "occDesc": "Cursos realizados en Informática y Sistemas de Información.",
+    "gwc": "Golden West College, Huntington Beach, CA",
+    "gwcDesc": "Cursos realizados en Informática, Sistemas de Información, Medios Digitales y Diseño Gráfico.",
+    "download": "Descargar"
+  }
+}

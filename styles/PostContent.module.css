@@ -1,0 +1,14 @@
+.post_img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.post_img_wrapper {
+  width: 100%;
+}
+
+.post_img_wrapper > span {
+  position: unset !important;
+}
