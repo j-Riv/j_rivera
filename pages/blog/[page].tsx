@@ -3,35 +3,29 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
-import { getPostBySlug } from "../../lib/api";
+import { getAllPosts } from "../../lib/api";
 import PostContent from "../../components/PostContent";
 import { Post } from "../../types/cockpit";
 
 interface Props {
-  post: any;
+  posts: Post[];
 }
 
-const Post = ({ post }: Props) => {
-  const router = useRouter();
+const Blog = ({ posts }: Props) => {
+  const { query } = useRouter();
   return (
     <div className={styles.container}>
       <Head>
-        <title>{post.title}</title>
-        <meta name="description" content={post.meta_description} />
+        <title>Category: {query.tag}</title>
+        <meta name="description" content="Some Description" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        {router.isFallback ? (
-          <p>Loading…</p>
-        ) : (
-          <>
-            {" "}
-            <h1 className={styles.title}>{post.title}</h1>
-            <p>{post.meta_description}</p>
-            <PostContent content={post.content} />
-          </>
-        )}
+        <h1 className={styles.title}>All Posts {query.page}</h1>
+        {posts.map((post: Post) => (
+          <p key={post._id}>{post.title}</p>
+        ))}
       </main>
 
       <footer className={styles.footer}>
@@ -50,26 +44,20 @@ const Post = ({ post }: Props) => {
   );
 };
 
-export default Post;
+export default Blog;
 
 interface ServerProps {
   params: any;
 }
 
 export async function getServerSideProps({ params }: ServerProps) {
-  const data: Post = await getPostBySlug(params.slug);
+  const postsPerPage = process.env.NEXT_PUBLIC_POSTS_PER_PAGE;
+  const skip = params.page ? (Number(params.page) - 1) * postsPerPage : 0;
+  const data: Post[] = await getAllPosts(postsPerPage, skip);
 
   return {
     props: {
-      post: data,
+      posts: data,
     },
   };
 }
-
-// export async function getStaticPaths() {
-//   const allPosts: Post[] = await getAllPosts();
-//   return {
-//     paths: allPosts.map((post: any) => `/posts/${post.title_slug}`) || [],
-//     fallback: true,
-//   };
-// }
