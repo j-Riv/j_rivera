@@ -8,6 +8,7 @@ declare global {
       COCKPIT_URL: string;
       COCKPIT_POSTS_URL: string;
       COCKPIT_GET_POSTS_API_KEY: string;
+      NEXT_PUBLIC_POSTS_PER_PAGE: number;
     }
   }
 }
