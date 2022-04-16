@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
         <h3 className="uppercase font-bold text-2xl text-center text-white">
           Contact
         </h3>
-        <form className="w-1/2 mx-auto">
+        <form className="lg:w-1/2 mx-auto">
           <label className="block mx-auto my-4">
             <span className="block text-sm font-medium text-white uppercase">
               Name *
