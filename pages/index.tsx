@@ -1,27 +1,40 @@
 import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
-import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout";
+import Hero from "../components/Hero";
+import Blog from "../components/Blog";
+import Contact from "../components/Contact";
+import { getAllPosts } from "../lib/api";
+import type { Post } from "../types/cockpit";
 
-const Home: NextPage = () => {
+interface Props {
+  posts: Post[];
+}
+
+const Home: NextPage<Props> = ({ posts }) => {
   const t = useTranslations("about");
 
   return (
     <Layout title="Home" description="This is the Home Page">
-      <h1 className="text-3xl font-bold underline">{t("title")}</h1>
-
-      <p className={styles.description}>{t("content")}</p>
+      <Hero />
+      <Blog posts={posts} />
+      <Contact />
     </Layout>
   );
 };
 
 export default Home;
 
-export function getServerSideProps({ locale }: { locale: string }) {
-  console.log("locale", locale);
+interface ServerProps {
+  locale: string;
+}
+
+export async function getServerSideProps({ locale }: ServerProps) {
+  const data: Post[] = await getAllPosts(3, 0);
   return {
     props: {
       messages: require(`../locales/${locale}.json`),
+      posts: data,
     },
   };
 }

@@ -10,7 +10,8 @@
     "contact": "CONTACTO"
   },
   "hero": {
-    "iam": "YO SOY"
+    "iam": "YO SOY",
+    "content": "Mi nombre es José Alfredo Rivera Turcios y soy un Desarrollador Web Full Stack con sede en el sur de California."
   },
   "about": {
     "title": "SOBRE MI",

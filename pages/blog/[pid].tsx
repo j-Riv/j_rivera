@@ -4,6 +4,7 @@ import styles from "../../styles/Home.module.css";
 import { getAllPosts } from "../../lib/api";
 import { Post } from "../../types/cockpit";
 import Layout from "../../components/Layout";
+import BlogPost from "../../components/BlogPost";
 
 interface Props {
   posts: Post[];
@@ -13,10 +14,18 @@ const Blog: NextPage<Props> = ({ posts }) => {
   const { query } = useRouter();
   return (
     <Layout title="All Posts" description="All Posts">
-      <h1 className={styles.title}>All Posts {query.page}</h1>
-      {posts.map((post: Post) => (
-        <p key={post._id}>{post.title}</p>
-      ))}
+      <div className="bg-zinc-800">
+        <div className="container py-4">
+          <h1 className="uppercase font-bold text-4xl text-white">
+            All Posts {query.page}
+          </h1>
+          <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-1 gap-10 py-4">
+            {posts.map((post: Post) => (
+              <BlogPost key={post._id} post={post} />
+            ))}
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };
