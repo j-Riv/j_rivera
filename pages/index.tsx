@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
+import About from "../components/About";
 import Blog from "../components/Blog";
 import Contact from "../components/Contact";
 import { getAllPosts } from "../lib/api";
@@ -17,6 +18,7 @@ const Home: NextPage<Props> = ({ posts }) => {
   return (
     <Layout title="Home" description="This is the Home Page">
       <Hero />
+      <About />
       <Blog posts={posts} />
       <Contact />
     </Layout>
@@ -30,11 +32,11 @@ interface ServerProps {
 }
 
 export async function getServerSideProps({ locale }: ServerProps) {
-  const data: Post[] = await getAllPosts(3, 0);
+  const data: { posts: Post[]; total: number } = await getAllPosts(3, 0);
   return {
     props: {
       messages: require(`../locales/${locale}.json`),
-      posts: data,
+      posts: data.posts,
     },
   };
 }

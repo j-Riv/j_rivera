@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
           </label>
           <button
             type="button"
-            className="uppercase font-bold text-2xl rounded px-4 py-2 bg-zinc-800 text-white hover:bg-zinc-600"
+            className="uppercase font-bold text-xl rounded px-4 py-2 bg-zinc-800 text-white hover:bg-zinc-600"
           >
             Send
           </button>

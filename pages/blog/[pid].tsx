@@ -1,17 +1,19 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import styles from "../../styles/Home.module.css";
 import { getAllPosts } from "../../lib/api";
 import { Post } from "../../types/cockpit";
 import Layout from "../../components/Layout";
 import BlogPost from "../../components/BlogPost";
+import Pagination from "../../components/Pagination";
 
 interface Props {
   posts: Post[];
+  total: number;
 }
 
-const Blog: NextPage<Props> = ({ posts }) => {
+const Blog: NextPage<Props> = ({ posts, total }) => {
   const { query } = useRouter();
+
   return (
     <Layout title="All Posts" description="All Posts">
       <div className="bg-zinc-800">
@@ -26,6 +28,7 @@ const Blog: NextPage<Props> = ({ posts }) => {
           </div>
         </div>
       </div>
+      <Pagination totalPosts={total} />
     </Layout>
   );
 };
@@ -41,11 +44,15 @@ interface ServerProps {
 export async function getServerSideProps({ params }: ServerProps) {
   const postsPerPage = process.env.NEXT_PUBLIC_POSTS_PER_PAGE;
   const skip = params.pid ? (Number(params.pid) - 1) * postsPerPage : 0;
-  const data: Post[] = await getAllPosts(postsPerPage, skip);
+  const data: { posts: Post[]; total: number } = await getAllPosts(
+    postsPerPage,
+    skip
+  );
 
   return {
     props: {
-      posts: data,
+      posts: data.posts,
+      total: data.total,
     },
   };
 }

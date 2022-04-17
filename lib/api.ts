@@ -37,7 +37,10 @@ export const getAllPosts = async (
 
   const data: Entries = await fetchAPI(query);
 
-  return data?.entries;
+  return {
+    posts: data?.entries,
+    total: data?.total,
+  };
 };
 
 export const getPostBySlug = async (slug: string) => {
@@ -69,5 +72,8 @@ export const getAllPostsByCategory = async (
 
   const data: Entries = await fetchAPI(query);
 
-  return data?.entries;
+  return {
+    posts: data?.entries,
+    total: data?.total,
+  };
 };

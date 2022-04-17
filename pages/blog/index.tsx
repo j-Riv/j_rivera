@@ -10,11 +10,15 @@ interface ServerProps {
 
 export async function getServerSideProps({ params }: ServerProps) {
   const postsPerPage = process.env.NEXT_PUBLIC_POSTS_PER_PAGE;
-  const data: Post[] = await getAllPosts(postsPerPage, 0);
+  const data: { posts: Post[]; total: number } = await getAllPosts(
+    postsPerPage,
+    0
+  );
 
   return {
     props: {
-      posts: data,
+      posts: data.posts,
+      total: data.total,
     },
   };
 }
