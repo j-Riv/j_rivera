@@ -47,22 +47,24 @@ const MenuLinks: React.FC = () => {
 
   return (
     <>
-      {localeAvailable() && (
-        <a
-          className="flex items-center text-sm px-4 py-2 leading-none border border-zinc-300 rounded bg-zinc-300 text-black hover:text-white hover:bg-zinc-600  dark:bg-zinc-600 dark:text-white dark:border-zinc-600 hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0 cursor-pointer"
-          onClick={handlePush}
-        >
-          <LanguageIcon className="inline" />: {locale === "en" ? "ES" : "EN"}
-        </a>
-      )}
-      {!isSSR && (
-        <a
-          className="flex items-center text-sm px-4 py-2 lg:mx-1 leading-none border border-zinc-300 rounded bg-zinc-300 text-black hover:text-white hover:bg-zinc-600 dark:bg-zinc-600 dark:text-white dark:border-zinc-600 hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0 cursor-pointer"
-          onClick={handleThemeChange}
-        >
-          {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-        </a>
-      )}
+      <div className="hidden lg:flex gap-1">
+        {localeAvailable() && (
+          <a
+            className="flex items-center text-sm px-4 py-2 leading-none border border-zinc-300 rounded bg-zinc-300 text-black hover:text-white hover:bg-zinc-600  dark:bg-zinc-600 dark:text-white dark:border-zinc-600 hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0 cursor-pointer"
+            onClick={handlePush}
+          >
+            <LanguageIcon className="inline" />: {locale === "en" ? "ES" : "EN"}
+          </a>
+        )}
+        {!isSSR && (
+          <a
+            className="flex items-center text-sm px-4 py-2 lg:mx-1 leading-none border border-zinc-300 rounded bg-zinc-300 text-black hover:text-white hover:bg-zinc-600 dark:bg-zinc-600 dark:text-white dark:border-zinc-600 hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0 cursor-pointer"
+            onClick={handleThemeChange}
+          >
+            {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+          </a>
+        )}
+      </div>
 
       <Link href="/">
         <a className="block lg:inline-block text-sm px-4 py-2 lg:mx-2 leading-none rounded text-black hover:text-white hover:bg-zinc-600 dark:text-white hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0">

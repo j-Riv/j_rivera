@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import type { MutableRefObject } from "react";
+import React, { useState } from "react";
 import {
   BiErrorCircle as ErrorIcon,
   BiInfoCircle as InfoIcon,
@@ -7,53 +6,32 @@ import {
 import { IoIosCheckmarkCircleOutline as SuccessIcon } from "react-icons/io";
 import { ImWarning as WarningIcon } from "react-icons/im";
 
-import styles from "../styles/toast.module.css";
-
-const useToast = (message: any, variant = "success", style = {}) => {
+const useToast = (message: string, variant = "success", style = {}) => {
   const [show, setShow] = useState<boolean>(false);
-  const toastRef = useRef<HTMLDivElement>(
-    null
-  ) as MutableRefObject<HTMLDivElement>;
   const openToast = () => {
-    if (toastRef.current) {
-      console.log("TOAST>CURRENT", toastRef.current);
-      toastRef.current.classList.add(styles.show);
-      setTimeout(function () {
-        toastRef.current.classList.remove(styles.show);
-      }, 3000);
-    } else {
-      console.log("NOPE");
-    }
+    setShow(true);
+    setTimeout(function () {
+      setShow(false);
+    }, 3000);
   };
-  let toastStyle: React.CSSProperties | undefined, icon: {} | null | undefined;
+  let toastStyle: string;
+  let icon: {} | null | undefined;
   switch (variant) {
     case "success":
-      toastStyle = {
-        backgroundColor: "#adebad",
-        borderTop: "5px solid #2db92d",
-      };
-      icon = <SuccessIcon className={styles.icon} fill="#2db92d" />;
+      toastStyle = "bg-green-800 text-white";
+      icon = <SuccessIcon className="h-[25px] w-[25px] mr-[10px] text-white" />;
       break;
     case "error":
-      toastStyle = {
-        backgroundColor: "#ffcccc",
-        borderTop: "5px solid #ff0000",
-      };
-      icon = <ErrorIcon className={styles.icon} fill="#ff0000" />;
+      toastStyle = "bg-red-800 text-white";
+      icon = <ErrorIcon className="h-[25px] w-[25px] mr-[10px] text-white" />;
       break;
     case "info":
-      toastStyle = {
-        backgroundColor: "#ccf2ff",
-        borderTop: "5px solid #33ccff",
-      };
-      icon = <InfoIcon className={styles.icon} fill="#33ccff" />;
+      toastStyle = "bg-grey-800 text-white";
+      icon = <InfoIcon className="h-[25px] w-[25px] mr-[10px] text-white" />;
       break;
     case "warning":
-      toastStyle = {
-        backgroundColor: "#fff0b3",
-        borderTop: "5px solid #ffcc00",
-      };
-      icon = <WarningIcon className={styles.icon} fill="#ffcc00" />;
+      toastStyle = "bg-yellow-800 text-white";
+      icon = <WarningIcon className="h-[25px] w-[25px] mr-[10px] text-white" />;
       break;
     default:
       break;
@@ -62,11 +40,11 @@ const useToast = (message: any, variant = "success", style = {}) => {
     return (
       <React.Fragment>
         <div
-          ref={toastRef}
-          className={styles.snackbar}
-          style={{ ...toastStyle, ...style }}
+          className={`${toastStyle} min-w-[250px] -ml-[125px] rounded text-black text-center p-4 fixed z-10 left-[50%] bottom-[200px] ${
+            show ? "block" : "hidden"
+          }`}
         >
-          <div className={styles.content}>
+          <div className="flex text-xl font-bold">
             {icon}
             {message}
           </div>

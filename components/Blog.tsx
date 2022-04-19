@@ -13,7 +13,7 @@ const Blog: React.FC<Props> = ({ posts }) => {
       </h2>
 
       <div className="container relative">
-        <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-1 gap-10 py-4">
+        <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-1 gap-4 py-4">
           {posts.map((post: Post) => (
             <BlogPost key={post._id} post={post} hideTags={true} />
           ))}

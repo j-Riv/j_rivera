@@ -8,11 +8,6 @@ const Contact: React.FC = () => {
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
-  // const { openToast, ToastComponent } = useToast(
-  //   "this is my notification",
-  //   "success"
-  // );
-
   const resetForm = () => {
     setName("");
     setEmail("");
@@ -20,7 +15,9 @@ const Contact: React.FC = () => {
     setMessage("");
   };
 
-  const formHandler = async () => {
+  const formHandler = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -50,7 +47,11 @@ const Contact: React.FC = () => {
         <h3 className="uppercase font-bold text-2xl text-center text-black dark:text-white">
           Contact
         </h3>
-        <form className="lg:w-1/2 mx-auto">
+        <form
+          className="lg:w-1/2 mx-auto"
+          action="/api/contact"
+          onSubmit={formHandler}
+        >
           <label className="block mx-auto my-4">
             <span className="block text-sm font-medium text-black dark:text-white uppercase">
               Name *
@@ -75,7 +76,6 @@ const Contact: React.FC = () => {
             <input
               type="email"
               value={email}
-              pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
               required
               className="mt-1 block w-full px-3 py-2 bg-white border border-zinc-300 rounded-md text-sm shadow-sm placeholder-slate-400
               focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
@@ -120,14 +120,12 @@ const Contact: React.FC = () => {
             />
           </label>
           <button
-            type="button"
+            type="submit"
             className="uppercase font-bold text-xl rounded px-4 py-2 bg-zinc-200 text-black hover:bg-zinc-400 hover:text-white dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-600"
-            onClick={formHandler}
           >
             Send
           </button>
         </form>
-        {/* <ToastComponent /> */}
         <Toaster
           position="bottom-center"
           reverseOrder={false}
