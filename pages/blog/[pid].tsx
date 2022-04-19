@@ -15,7 +15,10 @@ const Blog: NextPage<Props> = ({ posts, total }) => {
   const { query } = useRouter();
 
   return (
-    <Layout title="All Posts" description="All Posts">
+    <Layout
+      title="j-Riv | Blog - All Posts"
+      description="I build things on the internet, sometimes I write some posts about it. You can find them here."
+    >
       <div className="bg-zinc-300 dark:bg-zinc-800">
         <div className="container py-4">
           <h1 className="uppercase font-bold text-4xl text-black dark:text-white">

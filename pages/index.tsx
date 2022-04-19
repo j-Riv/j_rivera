@@ -13,10 +13,10 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ posts }) => {
-  const t = useTranslations("about");
+  const t = useTranslations("hero");
 
   return (
-    <Layout title="Home" description="This is the Home Page">
+    <Layout title={`${t("iam")} j-Riv`} description={t("content")}>
       <Hero />
       <About />
       <Blog posts={posts} />

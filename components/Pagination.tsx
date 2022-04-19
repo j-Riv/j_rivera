@@ -65,22 +65,23 @@ const Pagination: React.FC<Props> = ({ totalPosts }) => {
                 </Link>
               )}
 
-              {Array.from({ length: totalPages }, (v, i) => i + 1).map(
-                (page: number) => (
-                  <Link key={page} href={`/blog/${page}`}>
-                    <a
-                      aria-current={currentPage === page ? true : false}
-                      className={
-                        currentPage === page
-                          ? "z-10 bg-red-800 border-zinc-300 text-white hover:bg-white hover:text-black dark:bg-red-800 dark:border-zinc-800 dark:text-white dark:hover:bg-red-900 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                          : "text-black hover:bg-white dark:bg-zinc-900 dark:border-zinc-800 dark:text-gray-500 dark:hover:bg-zinc-800 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                      }
-                    >
-                      {page}
-                    </a>
-                  </Link>
-                )
-              )}
+              {totalPages > 1 &&
+                Array.from({ length: totalPages }, (v, i) => i + 1).map(
+                  (page: number) => (
+                    <Link key={page} href={`/blog/${page}`}>
+                      <a
+                        aria-current={currentPage === page ? true : false}
+                        className={
+                          currentPage === page
+                            ? "z-10 bg-red-800 border-zinc-300 text-white hover:bg-white hover:text-black dark:bg-red-800 dark:border-zinc-800 dark:text-white dark:hover:bg-red-900 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                            : "text-black hover:bg-white dark:bg-zinc-900 dark:border-zinc-800 dark:text-gray-500 dark:hover:bg-zinc-800 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                        }
+                      >
+                        {page}
+                      </a>
+                    </Link>
+                  )
+                )}
               {currentPage !== totalPages && (
                 <Link href={`/blog/${currentPage + 1}`}>
                   <a className="relative inline-flex items-center px-2 py-2 rounded-r-md hover:bg-white hover:text-black dark:bg-zinc-900 dark:border-zinc-800 border text-sm font-medium dark:text-gray-500 dark:hover:bg-zinc-800">
