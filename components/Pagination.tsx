@@ -18,19 +18,26 @@ const Pagination: React.FC<Props> = ({ totalPosts }) => {
     currentPage === totalPages ? totalPosts : start + postsPerPage - 1;
 
   return (
-    <div className="bg-zinc-800 px-4 py-3 flex items-center justify-between border border-zinc-900 sm:px-6">
+    <div className="bg-zinc-300 dark:bg-zinc-800 px-4 py-3 flex items-center justify-between border dark:border-zinc-900 sm:px-6">
       <div className="container">
+        <div className="sm:hidden py-4">
+          <p className="text-sm text-black dark:text-white">
+            Showing <span className="font-medium">{start}</span> to{" "}
+            <span className="font-medium">{end}</span> of{" "}
+            <span className="font-medium">{totalPosts}</span> results
+          </p>
+        </div>
         <div className="flex-1 flex justify-between sm:hidden">
           {currentPage !== 1 && (
             <Link href={`/blog/${currentPage - 1}`}>
-              <a className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+              <a className="relative inline-flex items-center px-4 py-2 border border-gray-300 hover:bg-zinc-300 dark:border-gray-300 text-sm font-medium rounded-md dark:text-white dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-white">
                 Previous
               </a>
             </Link>
           )}
           {currentPage !== totalPages && (
             <Link href={`/blog/${currentPage + 1}`}>
-              <a className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+              <a className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 hover:bg-zinc-300 dark:border-gray-300 text-sm font-medium rounded-md dark:text-white dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:hover:text-white">
                 Next
               </a>
             </Link>
@@ -38,7 +45,7 @@ const Pagination: React.FC<Props> = ({ totalPosts }) => {
         </div>
         <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm text-white">
+            <p className="text-sm text-black dark:text-white">
               Showing <span className="font-medium">{start}</span> to{" "}
               <span className="font-medium">{end}</span> of{" "}
               <span className="font-medium">{totalPosts}</span> results
@@ -51,7 +58,7 @@ const Pagination: React.FC<Props> = ({ totalPosts }) => {
             >
               {currentPage !== 1 && (
                 <Link href={`/blog/${currentPage - 1}`}>
-                  <a className="relative inline-flex items-center px-2 py-2 rounded-l-md bg-zinc-900 border-zinc-800 border text-sm font-medium text-gray-500 hover:bg-zinc-800">
+                  <a className="relative inline-flex items-center px-2 py-2 rounded-l-md hover:bg-white hover:text-black dark:bg-zinc-900 dark:border-zinc-800 border text-sm font-medium dark:text-gray-500 dark:hover:bg-zinc-800">
                     <span className="sr-only">Previous</span>
                     <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
                   </a>
@@ -65,8 +72,8 @@ const Pagination: React.FC<Props> = ({ totalPosts }) => {
                       aria-current={currentPage === page ? true : false}
                       className={
                         currentPage === page
-                          ? "z-10 bg-red-800 border-zinc-800 text-white hover:bg-red-900 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                          : "bg-zinc-900 border-zinc-800 text-gray-500 hover:bg-zinc-800 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                          ? "z-10 bg-red-800 border-zinc-300 text-white hover:bg-white hover:text-black dark:bg-red-800 dark:border-zinc-800 dark:text-white dark:hover:bg-red-900 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                          : "text-black hover:bg-white dark:bg-zinc-900 dark:border-zinc-800 dark:text-gray-500 dark:hover:bg-zinc-800 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
                       }
                     >
                       {page}
@@ -76,7 +83,7 @@ const Pagination: React.FC<Props> = ({ totalPosts }) => {
               )}
               {currentPage !== totalPages && (
                 <Link href={`/blog/${currentPage + 1}`}>
-                  <a className="relative inline-flex items-center px-2 py-2 rounded-r-md bg-zinc-900 border-zinc-800 border text-sm font-medium text-gray-500 hover:bg-zinc-800">
+                  <a className="relative inline-flex items-center px-2 py-2 rounded-r-md hover:bg-white hover:text-black dark:bg-zinc-900 dark:border-zinc-800 border text-sm font-medium dark:text-gray-500 dark:hover:bg-zinc-800">
                     <span className="sr-only">Next</span>
                     <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
                   </a>

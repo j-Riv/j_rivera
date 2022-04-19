@@ -45,14 +45,14 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div id="Contact" className="bg-black py-10">
+    <div id="Contact" className="bg-zinc-200 dark:bg-black py-10">
       <div className="container relative">
-        <h3 className="uppercase font-bold text-2xl text-center text-white">
+        <h3 className="uppercase font-bold text-2xl text-center text-black dark:text-white">
           Contact
         </h3>
         <form className="lg:w-1/2 mx-auto">
           <label className="block mx-auto my-4">
-            <span className="block text-sm font-medium text-white uppercase">
+            <span className="block text-sm font-medium text-black dark:text-white uppercase">
               Name *
             </span>
             <input
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
             />
           </label>
           <label className="block mx-auto my-4">
-            <span className="block text-sm font-medium text-white uppercase">
+            <span className="block text-sm font-medium text-black dark:text-white uppercase">
               Email *
             </span>
             <input
@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
             />
           </label>
           <label className="block mx-auto my-4">
-            <span className="block text-sm font-medium text-white uppercase">
+            <span className="block text-sm font-medium text-black dark:text-white uppercase">
               Subject *
             </span>
             <input
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
             />
           </label>
           <label className="block mx-auto my-4">
-            <span className="block text-sm font-medium text-white uppercase">
+            <span className="block text-sm font-medium text-black dark:text-white uppercase">
               Message *
             </span>
             <textarea
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
           </label>
           <button
             type="button"
-            className="uppercase font-bold text-xl rounded px-4 py-2 bg-zinc-800 text-white hover:bg-zinc-600"
+            className="uppercase font-bold text-xl rounded px-4 py-2 bg-zinc-200 text-black hover:bg-zinc-400 hover:text-white dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-600"
             onClick={formHandler}
           >
             Send

@@ -7,8 +7,8 @@ interface Props {
 
 const Blog: React.FC<Props> = ({ posts }) => {
   return (
-    <div className="bg-zinc-800 py-10">
-      <h2 className="uppercase font-bold text-4xl my-4 text-center text-white">
+    <div className="bg-zinc-300 dark:bg-zinc-900 py-10 -mt-[300px]">
+      <h2 className="relative uppercase font-bold text-4xl my-4 text-center text-white dark:text-white">
         Blog
       </h2>
 

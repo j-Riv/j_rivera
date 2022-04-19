@@ -40,7 +40,7 @@ const Tag: React.FC<Props> = ({ tag }) => {
 
   return (
     <Link href={`/blog/category/${tag}`}>
-      <a className="bg-red-800 hover:bg-red-900 py-2 px-4 rounded text-white">
+      <a className="flex items-center gap-1 bg-red-800 hover:bg-red-900 py-2 px-4 rounded text-white">
         {icon()}
         {` ${tag}`}
       </a>

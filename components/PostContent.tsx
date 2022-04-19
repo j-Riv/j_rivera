@@ -19,6 +19,7 @@ const options: HTMLReactParserOptions = {
             placeholder="blur"
             className="post_img"
           />
+          <p className="italic">{alt}</p>
         </div>
       );
     }

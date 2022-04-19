@@ -10,12 +10,14 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ title, description, children }) => {
   return (
-    <>
+    <div className="application-wrap">
       <Header title={title} description={description} />
       <NavBar />
-      <main className="relative">{children}</main>
+      <main className="relative flex-1 bg-zinc-300 dark:bg-black">
+        {children}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

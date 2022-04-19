@@ -7,14 +7,15 @@ const Hero: React.FC = () => {
   return (
     <div className="relative">
       <div
-        className="bg-black pb-12 overflow-y-hidden hero"
+        className="bg-neutral-400 dark:bg-black pb-12 overflow-y-hidden hero"
         style={{ minHeight: 700 }}
       >
-        <div className="bg-black hero__inner">
+        <div className="bg-neutral-400 dark:bg-black hero__inner">
           <div className="container mx-auto flex flex-col items-center py-12 sm:py-24 hero__divider">
             <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white font-black leading-7 md:leading-10 mb-10">
-                {t("iam")} <span className="text-zinc-700">j-Riv</span>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-zinc-500 dark:text-white font-black leading-7 md:leading-10 mb-10">
+                {t("iam")}{" "}
+                <span className="text-black dark:text-zinc-700">j-Riv</span>
               </h1>
               <Image
                 className="rounded-full"
@@ -23,7 +24,7 @@ const Hero: React.FC = () => {
                 height={140}
                 width={140}
               />
-              <p className="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-center text-sm sm:text-lg">
+              <p className="mt-5 sm:mt-10 lg:w-10/12 text-black dark:text-gray-400 font-normal text-center text-sm sm:text-lg">
                 {t("content")}
               </p>
             </div>
