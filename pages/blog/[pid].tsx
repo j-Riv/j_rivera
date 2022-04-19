@@ -16,12 +16,12 @@ const Blog: NextPage<Props> = ({ posts, total }) => {
 
   return (
     <Layout title="All Posts" description="All Posts">
-      <div className="bg-zinc-800">
+      <div className="bg-zinc-300 dark:bg-zinc-800">
         <div className="container py-4">
-          <h1 className="uppercase font-bold text-4xl text-white">
+          <h1 className="uppercase font-bold text-4xl text-black dark:text-white">
             All Posts {query.page}
           </h1>
-          <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-1 gap-10 py-4">
+          <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-1 gap-4 py-4">
             {posts.map((post: Post) => (
               <BlogPost key={post._id} post={post} />
             ))}

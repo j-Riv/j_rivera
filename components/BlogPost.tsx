@@ -13,8 +13,9 @@ const COCKPIT_URL = process.env.NEXT_PUBLIC_COCKPIT_STORAGE_URL;
 const BlogPost: React.FC<Props> = ({ post, hideTags }) => {
   const src = `${COCKPIT_URL}${post.image.path}`;
   const display = hideTags !== undefined ? false : true;
+
   return (
-    <article className="blog-post box-bore rounded px-4 py-4 bg-neutral-700">
+    <article className="blog-post bg-neutral-200 dark:bg-neutral-700 rounded px-4 py-4">
       <div className="blog-image min-h-[300px] w-full relative">
         <Link href={`/blog/post/${post.title_slug}`}>
           <a>
@@ -32,7 +33,7 @@ const BlogPost: React.FC<Props> = ({ post, hideTags }) => {
           </a>
         </Link>
       </div>
-      <h3 className="uppercase font-bold text-white text-2xl my-4 rounded bg-neutral-700 mx-4 -mt-6 py-2 px-4 relative">
+      <h3 className="uppercase font-bold text-black dark:text-white text-2xl my-4 rounded bg-neutral-200 dark:bg-neutral-700 mx-4 -mt-6 py-2 px-4 relative">
         {post.title}
       </h3>
       {display && (
@@ -43,11 +44,11 @@ const BlogPost: React.FC<Props> = ({ post, hideTags }) => {
         </div>
       )}
 
-      <p className="text-justify my-4 mx-4 text-white">
+      <p className="text-justify my-4 mx-4 text-black dark:text-white">
         {post.meta_description}
       </p>
       <Link href={`/blog/post/${post.title_slug}`}>
-        <a className="uppercase font-bold text-lg px-4 py-2 rounded bg-neutral-700 text-white hover:text-white hover:bg-zinc-800">
+        <a className="uppercase font-bold text-lg px-4 py-2 rounded hover:bg-neutral-300 dark:bg-neutral-700 dark:text-white dark:hover:text-white dark:hover:bg-zinc-800">
           Continue Reading...
         </a>
       </Link>

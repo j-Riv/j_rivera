@@ -8,11 +8,6 @@ const Contact: React.FC = () => {
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
-  // const { openToast, ToastComponent } = useToast(
-  //   "this is my notification",
-  //   "success"
-  // );
-
   const resetForm = () => {
     setName("");
     setEmail("");
@@ -20,7 +15,9 @@ const Contact: React.FC = () => {
     setMessage("");
   };
 
-  const formHandler = async () => {
+  const formHandler = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -45,14 +42,18 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div id="Contact" className="bg-black py-10">
+    <div id="Contact" className="bg-zinc-200 dark:bg-black py-10">
       <div className="container relative">
-        <h3 className="uppercase font-bold text-2xl text-center text-white">
+        <h3 className="uppercase font-bold text-2xl text-center text-black dark:text-white">
           Contact
         </h3>
-        <form className="lg:w-1/2 mx-auto">
+        <form
+          className="lg:w-1/2 mx-auto"
+          action="/api/contact"
+          onSubmit={formHandler}
+        >
           <label className="block mx-auto my-4">
-            <span className="block text-sm font-medium text-white uppercase">
+            <span className="block text-sm font-medium text-black dark:text-white uppercase">
               Name *
             </span>
             <input
@@ -69,13 +70,12 @@ const Contact: React.FC = () => {
             />
           </label>
           <label className="block mx-auto my-4">
-            <span className="block text-sm font-medium text-white uppercase">
+            <span className="block text-sm font-medium text-black dark:text-white uppercase">
               Email *
             </span>
             <input
               type="email"
               value={email}
-              pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
               required
               className="mt-1 block w-full px-3 py-2 bg-white border border-zinc-300 rounded-md text-sm shadow-sm placeholder-slate-400
               focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
             />
           </label>
           <label className="block mx-auto my-4">
-            <span className="block text-sm font-medium text-white uppercase">
+            <span className="block text-sm font-medium text-black dark:text-white uppercase">
               Subject *
             </span>
             <input
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
             />
           </label>
           <label className="block mx-auto my-4">
-            <span className="block text-sm font-medium text-white uppercase">
+            <span className="block text-sm font-medium text-black dark:text-white uppercase">
               Message *
             </span>
             <textarea
@@ -120,14 +120,12 @@ const Contact: React.FC = () => {
             />
           </label>
           <button
-            type="button"
-            className="uppercase font-bold text-xl rounded px-4 py-2 bg-zinc-800 text-white hover:bg-zinc-600"
-            onClick={formHandler}
+            type="submit"
+            className="uppercase font-bold text-xl rounded px-4 py-2 bg-zinc-200 text-black hover:bg-zinc-400 hover:text-white dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-600"
           >
             Send
           </button>
         </form>
-        {/* <ToastComponent /> */}
         <Toaster
           position="bottom-center"
           reverseOrder={false}

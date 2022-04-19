@@ -19,10 +19,12 @@ const BlogPost: NextPage<Props> = ({ post }) => {
 
   return (
     <Layout title={post.title} description={post.meta_description}>
-      <div className="bg-zinc-800">
+      <div className="bg-zinc-200 dark:bg-zinc-800">
         <div className="container">
-          <h1 className="uppercase text-3xl text-white">{post.title}</h1>
-          <div className="text-white">
+          <h1 className="uppercase text-3xl text-black dark:text-white py-4">
+            {post.title}
+          </h1>
+          <div className="text-black dark:text-white">
             <PostContent content={post.content} />
           </div>
         </div>
