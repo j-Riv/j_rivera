@@ -14,7 +14,7 @@ const BlogPost: React.FC<Props> = ({ post, hideTags }) => {
   const src = `${COCKPIT_URL}${post.image.path}`;
   const display = hideTags !== undefined ? false : true;
   return (
-    <div className="blog-post box-bore rounded px-4 py-4 bg-neutral-700">
+    <article className="blog-post box-bore rounded px-4 py-4 bg-neutral-700">
       <div className="blog-image min-h-[300px] w-full relative">
         <Link href={`/blog/post/${post.title_slug}`}>
           <a>
@@ -51,7 +51,7 @@ const BlogPost: React.FC<Props> = ({ post, hideTags }) => {
           Continue Reading...
         </a>
       </Link>
-    </div>
+    </article>
   );
 };
 

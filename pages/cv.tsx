@@ -44,8 +44,8 @@ const CV: NextPage = () => {
               <span className="flex-1">{t("suaveDate")}</span>
             </p>
             <ul>
-              {t.raw("suaveDesc").map((str: string) => (
-                <li>{str}</li>
+              {t.raw("suaveDesc").map((str: string, i: number) => (
+                <li key={i}>{str}</li>
               ))}
             </ul>
             <p className="py-4">{t("suaveTechUsed")}</p>
