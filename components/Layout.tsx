@@ -1,6 +1,7 @@
 import Header from "./Header";
+import NavBar from "./NavBar";
 import Footer from "./Footer";
-import styles from "../styles/Home.module.css";
+// import Example from "./Example";
 
 interface Props {
   title: string;
@@ -9,11 +10,12 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ title, description, children }) => {
   return (
-    <div className={styles.container}>
+    <>
       <Header title={title} description={description} />
-      <main className={styles.main}>{children}</main>
+      <NavBar />
+      <main className="relative">{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -1,20 +1,32 @@
+import { useEffect } from "react";
 import type { NextPage } from "next";
-import styles from "../../../styles/Home.module.css";
+import prism from "prismjs";
 import { getPostBySlug } from "../../../lib/api";
 import PostContent from "../../../components/PostContent";
 import { Post } from "../../../types/cockpit";
 import Layout from "../../../components/Layout";
+import "prismjs/components/prism-markup-templating";
+import "prismjs/components/prism-php";
 
 interface Props {
   post: Post;
 }
 
 const BlogPost: NextPage<Props> = ({ post }) => {
+  useEffect(() => {
+    prism.highlightAll();
+  }, []);
+
   return (
     <Layout title={post.title} description={post.meta_description}>
-      <h1 className={styles.title}>{post.title}</h1>
-      <p>{post.meta_description}</p>
-      <PostContent content={post.content} />
+      <div className="bg-zinc-800">
+        <div className="container">
+          <h1 className="uppercase text-3xl text-white">{post.title}</h1>
+          <div className="text-white">
+            <PostContent content={post.content} />
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };

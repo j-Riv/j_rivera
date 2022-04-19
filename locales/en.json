@@ -10,7 +10,8 @@
     "contact": "CONTACT"
   },
   "hero": {
-    "iam": "I AM"
+    "iam": "I AM",
+    "content": "My Name is José Alfredo Rivera Turcios and I am a Full Stack Web Developer based out of Southern California."
   },
   "about": {
     "title": "ABOUT ME",

@@ -11,11 +11,15 @@ interface ServerProps {
 }
 
 export async function getServerSideProps({ params }: ServerProps) {
-  const data: Post[] = await getAllPostsByCategory(params.tag, "1");
+  const data: { posts: Post[]; total: number } = await getAllPostsByCategory(
+    params.tag,
+    "1"
+  );
 
   return {
     props: {
-      posts: data,
+      posts: data.posts,
+      total: data.total,
     },
   };
 }
