@@ -6,12 +6,17 @@ ENV PORT 3000
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+RUN apk update && apk upgrade
+RUN apk add git
+
 # Installing dependencies
 COPY package*.json /usr/src/app/
 RUN npm install
 
 # Copying source files
 COPY . /usr/src/app
+
+RUN chmod -R 777
 
 # Building app
 RUN npm run build
