@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
     const endpoint =
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000"
-        : "https://j-rivera.com";
+        : process.env.NEXT_PUBLIC_BASE_URL;
 
     try {
       const response = await fetch(`${endpoint}/api/contact`, {

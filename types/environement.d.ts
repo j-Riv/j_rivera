@@ -4,7 +4,7 @@ declare global {
       NODE_ENV: "development" | "production";
       NEXT_PUBLIC_GMAIL: string;
       NEXT_PUBLIC_GMAIL_APP_PASSWORD: string;
-      BASE_URL: string;
+      NEXT_PUBLIC_BASE_URL: string;
       COCKPIT_URL: string;
       COCKPIT_POSTS_URL: string;
       COCKPIT_GET_POSTS_API_KEY: string;

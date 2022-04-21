@@ -17,13 +17,15 @@ const Hero: React.FC = () => {
                 {t("iam")}{" "}
                 <span className="text-black dark:text-zinc-700">j-Riv</span>
               </h1>
-              <Image
-                className="rounded-full"
-                src="/images/iam-jriv.jpeg"
-                alt="I am j-Riv"
-                height={140}
-                width={140}
-              />
+              <div className="text-center">
+                <Image
+                  className="rounded-full"
+                  src="/images/iam-jriv.jpeg"
+                  alt="I am j-Riv"
+                  height={140}
+                  width={140}
+                />
+              </div>
               <p className="mt-5 sm:mt-10 lg:w-10/12 text-black dark:text-gray-400 font-normal text-center text-sm sm:text-lg">
                 {t("content")}
               </p>
