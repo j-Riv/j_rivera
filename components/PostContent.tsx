@@ -2,6 +2,7 @@ import { HTMLReactParserOptions } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 import parse from "html-react-parser";
 import Image from "next/image";
+import styles from "../styles/PostContent.module.css";
 
 const options: HTMLReactParserOptions = {
   replace: domNode => {
@@ -9,7 +10,7 @@ const options: HTMLReactParserOptions = {
       const { src, alt } = domNode.attribs;
 
       return (
-        <div className="post_image_wrapper">
+        <div className={styles.post_img_wrapper}>
           <Image
             src={src}
             alt={alt}
@@ -17,7 +18,8 @@ const options: HTMLReactParserOptions = {
             quality={75}
             blurDataURL={src}
             placeholder="blur"
-            className="post_img"
+            className={styles.post_img}
+            objectFit="contain"
           />
           <p className="italic">{alt}</p>
         </div>
@@ -28,7 +30,7 @@ const options: HTMLReactParserOptions = {
 
 const PostContent = ({ content }: { content: string }) => {
   return (
-    <div style={{ maxWidth: "1200px", position: "relative" }}>
+    <div className="post-content" style={{ position: "relative" }}>
       {parse(content, options)}
     </div>
   );

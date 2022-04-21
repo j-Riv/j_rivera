@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import toast, { Toaster } from "react-hot-toast";
-// import useToast from "./Toast";
 
 const Contact: React.FC = () => {
+  const t = useTranslations("contact");
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
@@ -33,19 +34,19 @@ const Contact: React.FC = () => {
       if (json.messageId) {
         console.log("SUCCESS", json.messageId);
         resetForm();
-        return toast.success("Message Sent");
+        return toast.success(t("fields.success"));
       }
     } catch (err: any) {
       console.log("ERROR", err.message);
-      return toast.error(err.message);
+      return toast.error(t("fields.error"));
     }
   };
 
   return (
     <div id="Contact" className="bg-zinc-200 dark:bg-black py-10">
       <div className="container relative">
-        <h3 className="uppercase font-bold text-2xl text-center text-black dark:text-white">
-          Contact
+        <h3 className="uppercase font-bold text-3xl text-center text-black dark:text-white">
+          {t("title")}
         </h3>
         <form
           className="lg:w-1/2 mx-auto"
@@ -54,7 +55,7 @@ const Contact: React.FC = () => {
         >
           <label className="block mx-auto my-4">
             <span className="block text-sm font-medium text-black dark:text-white uppercase">
-              Name *
+              {t("fields.name")} *
             </span>
             <input
               type="text"
@@ -71,7 +72,7 @@ const Contact: React.FC = () => {
           </label>
           <label className="block mx-auto my-4">
             <span className="block text-sm font-medium text-black dark:text-white uppercase">
-              Email *
+              {t("fields.email")} *
             </span>
             <input
               type="email"
@@ -105,7 +106,7 @@ const Contact: React.FC = () => {
           </label>
           <label className="block mx-auto my-4">
             <span className="block text-sm font-medium text-black dark:text-white uppercase">
-              Message *
+              {t("fields.message")} *
             </span>
             <textarea
               value={message}
@@ -123,7 +124,7 @@ const Contact: React.FC = () => {
             type="submit"
             className="uppercase font-bold text-xl rounded px-4 py-2 bg-zinc-200 text-black hover:bg-zinc-400 hover:text-white dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-600"
           >
-            Send
+            {t("fields.submit")}
           </button>
         </form>
         <Toaster

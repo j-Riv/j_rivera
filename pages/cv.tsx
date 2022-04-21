@@ -7,8 +7,8 @@ const CV: NextPage = () => {
   const t = useTranslations("resume");
 
   return (
-    <Layout title="Resume" description="CV">
-      <div className="bg-zinc-300 dark:bg-black text-black dark:text-white py-4">
+    <Layout title={t("title")} description={t("description")}>
+      <div className="bg-zinc-300 dark:bg-zinc-800 text-black dark:text-white py-4">
         <div className="container">
           <h2 className="text-2xl font-bold">José Alfredo Rivera Turcios</h2>
           <SocialLinks />

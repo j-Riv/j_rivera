@@ -1,4 +1,4 @@
-import { createContext, useState, useMemo } from "react";
+import { createContext, useState, useMemo, useEffect } from "react";
 
 interface DefaultContext {
   theme: string;
@@ -26,6 +26,29 @@ export const ThemeContext = createContext(defaultContext);
 
 export const ThemeProvider: React.FC = ({ children }) => {
   const [theme, setTheme] = useState<string>(defaultTheme);
+
+  useEffect(() => {
+    const themeHandler = (e: any) => {
+      const colorScheme = e.matches ? "dark" : "light";
+      setTheme(colorScheme);
+    };
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", themeHandler);
+    return window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .removeEventListener("change", themeHandler);
+  }, []);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.removeItem("dark");
+    }
+  }, [theme]);
 
   const value = useMemo(
     () => ({

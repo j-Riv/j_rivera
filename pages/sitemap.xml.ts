@@ -68,10 +68,10 @@ const SiteMap = () => {
 
 export async function getServerSideProps({ res }: { res: NextApiResponse }) {
   // We make an API call to gather the URLs for our site
-  const data = await getAllPosts();
+  const data: { posts: Post[]; total: number } = await getAllPosts();
 
   // We generate the XML sitemap with the posts data
-  const sitemap = generateSiteMap(data);
+  const sitemap = generateSiteMap(data.posts);
 
   res.setHeader("Content-Type", "text/xml");
   // we send the XML to the browser

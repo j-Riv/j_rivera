@@ -15,8 +15,8 @@ const CategoryPage: NextPage<Props> = ({ posts, total }) => {
   const { query } = useRouter();
   return (
     <Layout
-      title={`Category: ${query.tag}`}
-      description={`All Posts With Category: ${query.tag}`}
+      title={`j-Riv | Blog - ${query.tag}`}
+      description={`I build things on the internet, sometimes I write some posts about it. You can find them here. All posts tagged: ${query.tag}`}
     >
       <div className="bg-zinc-300 dark:bg-zinc-800">
         <div className="container py-4">
