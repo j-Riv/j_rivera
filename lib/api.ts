@@ -1,6 +1,6 @@
 import type { Entries } from "../types/cockpit";
 
-const API_URL = process.env.COCKPIT_POSTS_URL;
+const API_URL = process.env.NEXT_PUBLIC_COCKPIT_POSTS_URL;
 const postsPerPage = process.env.NEXT_PUBLIC_POSTS_PER_PAGE;
 
 const fetchAPI = async (query: {}) => {
