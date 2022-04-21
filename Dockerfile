@@ -16,7 +16,7 @@ RUN npm install
 # Copying source files
 COPY . /usr/src/app
 
-RUN chmod -R 777
+RUN chmod -R 777 /usr/src/app
 
 # Building app
 RUN npm run build
