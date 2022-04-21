@@ -1,4 +1,4 @@
-import { Entries } from "../types/cockpit";
+import type { Entries } from "../types/cockpit";
 
 const API_URL = process.env.COCKPIT_POSTS_URL;
 const postsPerPage = process.env.NEXT_PUBLIC_POSTS_PER_PAGE;
@@ -66,6 +66,8 @@ export const getAllPostsByCategory = async (
     skip: page ? (Number(page) - 1) * postsPerPage : 0,
     populate: 1,
   };
+
+  console.log("QUERY", query);
 
   if (limit) query.limit = limit;
   if (skip) query.skip = skip;

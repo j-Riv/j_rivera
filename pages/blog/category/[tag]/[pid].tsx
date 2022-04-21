@@ -21,7 +21,8 @@ const CategoryPage: NextPage<Props> = ({ posts, total }) => {
       <div className="bg-zinc-300 dark:bg-zinc-800">
         <div className="container py-4">
           <h1 className="uppercase font-bold text-4xl text-black dark:text-white">
-            Posts Tagged With "{query.tag}"
+            Posts Tagged With &quot;{query.tag}
+            &quot;
           </h1>
           <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-1 gap-4 py-4">
             {posts.map((post: Post) => (

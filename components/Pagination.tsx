@@ -46,9 +46,13 @@ const Pagination: React.FC<Props> = ({ totalPosts }) => {
         <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
           <div>
             <p className="text-sm text-black dark:text-white">
-              Showing <span className="font-medium">{start}</span> to{" "}
-              <span className="font-medium">{end}</span> of{" "}
-              <span className="font-medium">{totalPosts}</span> results
+              Showing{" "}
+              <span className="font-medium">
+                {totalPosts > 0 ? start : "0"}
+              </span>{" "}
+              to{" "}
+              <span className="font-medium">{totalPosts > 0 ? end : "0"}</span>{" "}
+              of <span className="font-medium">{totalPosts}</span> results
             </p>
           </div>
           <div>

@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals", "airbnb"],
+  "extends": ["next/core-web-vitals"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module",
@@ -7,22 +7,22 @@
       "jsx": true
     }
   },
-  "plugins": ["@typescript-eslint", "import"],
+  "plugins": ["@typescript-eslint", "import", "eslint-plugin-prettier"],
   "rules": {
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
-    "@typescript-eslint/no-unused-vars": "on",
+    "@typescript-eslint/no-unused-vars": 0,
     "import/no-unresolved": "error",
     "no-plusplus": [0],
     "no-else-return": "off",
-    "prettier/prettier": [
+    "import/extensions": [
       "error",
+      "ignorePackages",
       {
-        "trailingComma": "es5",
-        "singleQuote": false,
-        "tabWidth": 2,
-        "arrowParens": "avoid",
-        "semi": false
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
       }
     ],
     "react/prop-types": [0],

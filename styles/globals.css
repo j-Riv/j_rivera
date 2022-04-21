@@ -55,3 +55,20 @@ html.dark {
 .post-content p {
   @apply my-4;
 }
+
+.post_img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.post_img_wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.post_img_wrapper > span {
+  position: unset !important;
+}
