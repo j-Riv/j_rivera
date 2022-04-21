@@ -1,7 +1,7 @@
 import type { NextApiResponse } from "next";
 import collect from "collect.js";
 import { getAllPosts } from "../lib/api";
-import { Post } from "../types/cockpit";
+import type { Post } from "../types/cockpit";
 
 const BASE_URL = process.env.BASE_URL;
 
@@ -14,12 +14,6 @@ const generateSiteMap = (posts: Post[]) => {
     .flatten()
     .unique()
     .map(tag => {
-      const payload = collection
-        .filter((item: { tags: string[] }) => {
-          return collect(item.tags).contains(tag);
-        })
-        .all();
-
       return `/blog/category/${tag}`;
     })
     .all();

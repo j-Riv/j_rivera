@@ -78,6 +78,7 @@ const Contact: React.FC = () => {
               type="email"
               value={email}
               required
+              pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               className="mt-1 block w-full px-3 py-2 bg-white border border-zinc-300 rounded-md text-sm shadow-sm placeholder-slate-400
               focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
               disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
@@ -122,7 +123,7 @@ const Contact: React.FC = () => {
           </label>
           <button
             type="submit"
-            className="uppercase font-bold text-xl rounded px-4 py-2 bg-zinc-200 text-black hover:bg-zinc-400 hover:text-white dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-600"
+            className="uppercase font-bold text-xl rounded px-4 py-2 bg-zinc-800 text-white hover:bg-zinc-400 hover:text-white dark:bg-neutral-700 dark:text-white dark:hover:bg-neutral-600"
           >
             {t("fields.submit")}
           </button>
