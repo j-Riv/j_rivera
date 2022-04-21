@@ -2,8 +2,8 @@ declare global {
   namespace NodeJS {
     interface ProcessEnv {
       NODE_ENV: "development" | "production";
-      GMAIL: string;
-      GMAIL_APP_PASSWORD: string;
+      NEXT_PUBLIC_GMAIL: string;
+      NEXT_PUBLIC_GMAIL_APP_PASSWORD: string;
       BASE_URL: string;
       COCKPIT_URL: string;
       COCKPIT_POSTS_URL: string;

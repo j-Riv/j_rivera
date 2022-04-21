@@ -32,8 +32,8 @@ export default async function handler(
       port: 465,
       secure: true,
       auth: {
-        user: process.env.GMAIL,
-        pass: process.env.GMAIL_APP_PASSWORD,
+        user: process.env.NEXT_PUBLIC_GMAIL,
+        pass: process.env.NEXT_PUBLIC_GMAIL_APP_PASSWORD,
       },
     })
   );
