@@ -19,8 +19,13 @@ const Contact: React.FC = () => {
   const formHandler = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
+    const endpoint =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000"
+        : "https://j-rivera.com";
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(`${endpoint}/api/contact`, {
         method: "POST",
         body: JSON.stringify({
           name,
