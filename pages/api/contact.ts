@@ -42,7 +42,7 @@ export default async function handler(
 
   const info = await transporter.sendMail({
     from: body.email,
-    to: process.env.GMAIL,
+    to: process.env.NEXT_PUBLIC_GMAIL,
     replyTo: body.email,
     subject: body.subject,
     html: htmlMessage,
