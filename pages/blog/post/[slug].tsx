@@ -1,22 +1,16 @@
-import { useEffect } from "react";
 import type { NextPage } from "next";
-import prism from "prismjs";
+import Image from "next/image";
 import { getPostBySlug } from "../../../lib/api";
 import PostContent from "../../../components/PostContent";
 import { Post } from "../../../types/cockpit";
 import Layout from "../../../components/Layout";
-import "prismjs/components/prism-markup-templating";
-import "prismjs/components/prism-php";
 
 interface Props {
   post: Post;
 }
 
 const BlogPost: NextPage<Props> = ({ post }) => {
-  useEffect(() => {
-    prism.highlightAll();
-  }, []);
-
+  const src = `${process.env.NEXT_PUBLIC_COCKPIT_STORAGE_URL}/${post.image.path}`;
   return (
     <Layout title={post.title} description={post.meta_description}>
       <div className="bg-zinc-200 dark:bg-zinc-800">
@@ -24,6 +18,21 @@ const BlogPost: NextPage<Props> = ({ post }) => {
           <h1 className="uppercase text-3xl text-black dark:text-white py-4">
             {post.title}
           </h1>
+          <div className="post_img_wrapper">
+            <Image
+              src={src}
+              alt={post.image_alt}
+              layout="fill"
+              quality={75}
+              blurDataURL={src}
+              placeholder="blur"
+              className="post_img"
+              objectFit="contain"
+            />
+            <p className="italic text-black dark:text-white">
+              {post.image_alt}
+            </p>
+          </div>
           <div className="text-black dark:text-white">
             <PostContent content={post.content} />
           </div>

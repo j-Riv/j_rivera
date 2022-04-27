@@ -1,5 +1,11 @@
-import parse, { HTMLReactParserOptions, Element } from "html-react-parser";
+import parse, {
+  HTMLReactParserOptions,
+  Element,
+  attributesToProps,
+  domToReact,
+} from "html-react-parser";
 import Image from "next/image";
+import CodeSnippet from "./CodeSnippet";
 
 const options: HTMLReactParserOptions = {
   replace: domNode => {
@@ -22,6 +28,15 @@ const options: HTMLReactParserOptions = {
         </div>
       );
     }
+
+    if (domNode instanceof Element && domNode.name === "pre") {
+      const props = attributesToProps(domNode.attribs);
+      return (
+        <CodeSnippet {...props}>
+          {domToReact(domNode.children, options)}
+        </CodeSnippet>
+      );
+    }
   },
 };
 
@@ -34,3 +49,6 @@ const PostContent = ({ content }: { content: string }) => {
 };
 
 export default PostContent;
+function children(children: any, options: HTMLReactParserOptions) {
+  throw new Error("Function not implemented.");
+}

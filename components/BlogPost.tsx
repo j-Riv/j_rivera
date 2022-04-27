@@ -8,10 +8,8 @@ interface Props {
   hideTags?: boolean;
 }
 
-const COCKPIT_URL = process.env.NEXT_PUBLIC_COCKPIT_STORAGE_URL;
-
 const BlogPost: React.FC<Props> = ({ post, hideTags }) => {
-  const src = `${COCKPIT_URL}${post.image.path}`;
+  const src = `${process.env.NEXT_PUBLIC_COCKPIT_STORAGE_URL}${post.image.path}`;
   const display = hideTags !== undefined ? false : true;
 
   return (
