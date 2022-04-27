@@ -47,7 +47,13 @@ const NavBar: React.FC = () => {
       <div className="flex items-center flex-shrink-0 text-black dark:text-white mr-6">
         <Link href="/">
           <a>
-            <Image src="/images/jriv.png" alt="j-Riv" height={60} width={60} />
+            <Image
+              src="/images/jriv.png"
+              alt="j-Riv"
+              height={60}
+              width={60}
+              priority
+            />
           </a>
         </Link>
       </div>

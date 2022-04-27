@@ -3,7 +3,7 @@ import collect from "collect.js";
 import { getAllPosts } from "../lib/api";
 import type { Post } from "../types/cockpit";
 
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const generateSiteMap = (posts: Post[]) => {
   // post data
@@ -30,7 +30,6 @@ const generateSiteMap = (posts: Post[]) => {
 
   return `<?xml version="1.0" encoding="UTF-8"?>
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        <!--We manually set the two URLs we know already-->
         <url>
           <loc>${`${BASE_URL}`}</loc>
         </url>
