@@ -62,3 +62,4 @@ yarn-error.log*
 
 # misc
 NOTES.md
+public/*.pdf

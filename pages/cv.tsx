@@ -75,7 +75,7 @@ const CV: NextPage = () => {
         <div className="text-center">
           <a
             className="uppercase px-4 py-2 rounded bg-red-700 text-white text-center hover:bg-red-900"
-            href=""
+            href="/jose_alfredo_rivera_resume.pdf"
             download
           >
             Download
