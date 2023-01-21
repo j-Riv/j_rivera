@@ -20,9 +20,11 @@ const BlogPost: React.FC<Props> = ({ post, hideTags }) => {
             <Image
               src={src}
               alt={post.image_alt}
-              layout="fill"
+              layout="responsive"
               objectFit="cover"
               objectPosition="center"
+              width={post.image.width}
+              height={post.image.width}
               quality={75}
               blurDataURL={src}
               placeholder="blur"

@@ -7,6 +7,7 @@ const Footer: React.FC = () => {
         href="https://github.com/j-Riv"
         target="_blank"
         rel="noopener noreferrer"
+        className="text-black dark:text-white"
       >
         {`© ${new Date().getFullYear()} j-Riv`}
       </a>

@@ -18,15 +18,16 @@ const BlogPost: NextPage<Props> = ({ post }) => {
           <h1 className="uppercase text-3xl text-black dark:text-white py-4">
             {post.title}
           </h1>
-          <div className="post_img_wrapper">
+          <div className="relative">
             <Image
               src={src}
               alt={post.image_alt}
-              layout="fill"
+              layout="responsive"
               quality={75}
+              width={post.image.width}
+              height={post.image.height}
               blurDataURL={src}
               placeholder="blur"
-              className="post_img"
               objectFit="contain"
             />
             <p className="italic text-black dark:text-white">

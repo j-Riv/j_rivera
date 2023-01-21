@@ -9,6 +9,8 @@ import {
   FaServer as ServerIcon,
   FaSearch as SearchIcon,
 } from "react-icons/fa";
+import { BsCpuFill as CpuIcon } from "react-icons/bs";
+import { SiBlueprint as PrinterIcon } from "react-icons/si";
 
 interface Props {
   tag: string;
@@ -34,6 +36,10 @@ const Tag: React.FC<Props> = ({ tag }) => {
       return <PiIcon className="inline" />;
     } else if (tag === "Code") {
       return <CodeIcon className="inline" />;
+    } else if (tag === "ARM" || tag === "X86") {
+      return <CpuIcon className="inline" />;
+    } else if (tag === "3D Printing") {
+      return <PrinterIcon className="inline" />;
     } else {
       return <SearchIcon className="inline" />;
     }
