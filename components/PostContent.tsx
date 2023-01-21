@@ -10,19 +10,20 @@ import CodeSnippet from "./CodeSnippet";
 const options: HTMLReactParserOptions = {
   replace: domNode => {
     if (domNode instanceof Element && domNode.name === "img") {
-      const { src, alt } = domNode.attribs;
+      const { src, alt, width, height } = domNode.attribs;
 
       return (
-        <div className="post_img_wrapper">
+        <div className="relative">
           <Image
             src={src}
             alt={alt}
-            layout="fill"
+            layout="responsive"
+            width={width ? parseInt(width) : 2048}
+            height={height ? parseInt(height) : 2048}
             quality={75}
             blurDataURL={src}
             placeholder="blur"
-            className="post_img"
-            objectFit="contain"
+            objectFit={width ? "contain" : "cover"}
           />
           <p className="italic">{alt}</p>
         </div>

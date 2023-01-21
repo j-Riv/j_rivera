@@ -11,6 +11,7 @@ const SocialLinks: React.FC = () => {
   return (
     <div className="flex gap-5 text-2xl py-4">
       <a
+        className="text-black dark:text-white"
         href="https://www.linkedin.com/in/jose-alfredo-rivera-turcios/"
         rel="no-follow noreferrer"
         target="_blank"
@@ -18,6 +19,7 @@ const SocialLinks: React.FC = () => {
         <LinkedInIcon className="hover:text-zinc-600" />
       </a>
       <a
+        className="text-black dark:text-white"
         href="https://github.com/j-Riv"
         rel="no-follow noreferrer"
         target="_blank"
@@ -25,6 +27,7 @@ const SocialLinks: React.FC = () => {
         <GithubIcon className="hover:text-zinc-600" />
       </a>
       <a
+        className="text-black dark:text-white"
         href="https://stackoverflow.com/users/11257595/j-riv"
         rel="no-follow noreferrer"
         target="_blank"
@@ -32,6 +35,7 @@ const SocialLinks: React.FC = () => {
         <StackOverflowIcon className="hover:text-zinc-600" />
       </a>
       <a
+        className="text-black dark:text-white"
         href="https://instagram.com/iam_jriv"
         rel="no-follow noreferrer"
         target="_blank"
@@ -39,6 +43,7 @@ const SocialLinks: React.FC = () => {
         <InstagramIcon className="hover:text-zinc-600" />
       </a>
       <a
+        className="text-black dark:text-white"
         href="https://twitter.com/iam_jriv"
         rel="no-follow noreferrer"
         target="_blank"

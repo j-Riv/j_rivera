@@ -60,7 +60,8 @@ html.dark {
   object-fit: contain;
   width: 100% !important;
   position: relative !important;
-  height: unset !important;
+  height: auto !important;
+  /* height: unset !important; */
 }
 
 .post_img_wrapper {
@@ -71,4 +72,12 @@ html.dark {
 
 .post_img_wrapper > span {
   position: unset !important;
+}
+
+a {
+  color: #bc360a;
+}
+
+a:hover {
+  text-decoration: underline;
 }
