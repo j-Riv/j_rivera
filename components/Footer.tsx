@@ -1,8 +1,8 @@
 import SocialLinks from "./SocialLinks";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
-    <footer className="flex items-center justify-center gap-4 bg-zinc-200 dark:bg-zinc-800 py-4 text-center text-black dark:text-white stick bottom-0">
+    <footer className="stick bottom-0 flex items-center justify-center gap-4 bg-zinc-200 py-4 text-center text-black dark:bg-zinc-800 dark:text-white">
       <a
         href="https://github.com/j-Riv"
         target="_blank"

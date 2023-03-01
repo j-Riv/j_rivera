@@ -6,10 +6,10 @@ import Layout from "../../../../components/Layout";
 import BlogPost from "../../../../components/BlogPost";
 import Pagination from "../../../../components/Pagination";
 
-interface Props {
+type Props = {
   posts: Post[];
   total: number;
-}
+};
 
 const CategoryPage: NextPage<Props> = ({ posts, total }) => {
   const { query } = useRouter();
@@ -20,11 +20,11 @@ const CategoryPage: NextPage<Props> = ({ posts, total }) => {
     >
       <div className="bg-zinc-300 dark:bg-zinc-800">
         <div className="container py-4">
-          <h1 className="uppercase font-bold text-4xl text-black dark:text-white">
+          <h1 className="text-4xl font-bold uppercase text-black dark:text-white">
             Posts Tagged With &quot;{query.tag}
             &quot;
           </h1>
-          <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-1 gap-4 py-4">
+          <div className="grid grid-rows-1 gap-4 py-4 md:grid-cols-1 lg:grid-cols-3">
             {posts.map((post: Post) => (
               <BlogPost key={post._id} post={post} />
             ))}
@@ -38,12 +38,12 @@ const CategoryPage: NextPage<Props> = ({ posts, total }) => {
 
 export default CategoryPage;
 
-interface ServerProps {
+type ServerProps = {
   params: {
     tag: string;
     pid: string;
   };
-}
+};
 
 export async function getServerSideProps({ params }: ServerProps) {
   const data: { posts: Post[]; total: number } = await getAllPostsByCategory(

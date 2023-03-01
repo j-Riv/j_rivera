@@ -27,9 +27,9 @@ const Home: NextPage<Props> = ({ posts }) => {
 
 export default Home;
 
-interface ServerProps {
+type ServerProps = {
   locale: string;
-}
+};
 
 export async function getServerSideProps({ locale }: ServerProps) {
   const data: { posts: Post[]; total: number } = await getAllPosts(3, 0);

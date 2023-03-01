@@ -8,7 +8,7 @@ const CV: NextPage = () => {
 
   return (
     <Layout title={t("title")} description={t("description")}>
-      <div className="bg-zinc-300 dark:bg-zinc-800 text-black dark:text-white py-4">
+      <div className="bg-zinc-300 py-4 text-black dark:bg-zinc-800 dark:text-white">
         <div className="container">
           <h2 className="text-2xl font-bold">José Alfredo Rivera Turcios</h2>
           <SocialLinks />
@@ -20,7 +20,7 @@ const CV: NextPage = () => {
           <div className="my-4">
             <h3 className="text-xl font-bold">{t("technicalSkills")}</h3>
             <hr className="my-4 border-zinc-500" />
-            <ul className="list-disc list-inside">
+            <ul className="list-inside list-disc">
               <li>
                 <span className="font-bold">{t("operatingSystems")}:</span>{" "}
                 macOS, Linux, Windows
@@ -40,12 +40,12 @@ const CV: NextPage = () => {
             <hr className="my-4 border-zinc-500" />
             <p className="font-bold">{t("fullStackDeveloper")}</p>
             <p className="flex">
-              <span className="italic flex-1">
+              <span className="flex-1 italic">
                 Suavecito, Inc., Santa Ana, CA
               </span>
               <span className="flex-1 text-right">{t("suaveDate")}</span>
             </p>
-            <ul className="list-disc list-inside">
+            <ul className="list-inside list-disc">
               {t.raw("suaveDesc").map((str: string, i: number) => (
                 <li key={i}>{str}</li>
               ))}
@@ -74,7 +74,7 @@ const CV: NextPage = () => {
         </div>
         <div className="text-center">
           <a
-            className="uppercase px-4 py-2 rounded bg-red-700 text-white text-center hover:bg-red-900"
+            className="rounded bg-red-700 px-4 py-2 text-center uppercase text-white hover:bg-red-900"
             href="/jose_alfredo_rivera_resume.pdf"
             download
           >
@@ -88,9 +88,9 @@ const CV: NextPage = () => {
 
 export default CV;
 
-interface ServerProps {
+type ServerProps = {
   locale: string;
-}
+};
 
 export async function getServerSideProps({ locale }: ServerProps) {
   return {

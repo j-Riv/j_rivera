@@ -41,7 +41,11 @@ const options: HTMLReactParserOptions = {
   },
 };
 
-const PostContent = ({ content }: { content: string }) => {
+type Props = {
+  content: string;
+};
+
+const PostContent = ({ content }: Props) => {
   return (
     <div className="post-content" style={{ position: "relative" }}>
       {parse(content, options)}
@@ -50,6 +54,3 @@ const PostContent = ({ content }: { content: string }) => {
 };
 
 export default PostContent;
-function children(children: any, options: HTMLReactParserOptions) {
-  throw new Error("Function not implemented.");
-}

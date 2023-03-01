@@ -1,9 +1,15 @@
-import { createContext, useState, useMemo, useEffect } from "react";
+import {
+  type ReactElement,
+  createContext,
+  useState,
+  useMemo,
+  useEffect,
+} from "react";
 
-interface DefaultContext {
+type DefaultContext = {
   theme: string;
   setTheme: (theme: string) => void;
-}
+};
 
 let defaultTheme = "light";
 if (typeof window !== "undefined") {
@@ -24,7 +30,11 @@ const defaultContext: DefaultContext = {
 
 export const ThemeContext = createContext(defaultContext);
 
-export const ThemeProvider: React.FC = ({ children }) => {
+type Props = {
+  children: ReactElement | ReactElement[];
+};
+
+export const ThemeProvider = ({ children }: Props) => {
   const [theme, setTheme] = useState<string>(defaultTheme);
 
   useEffect(() => {

@@ -2,10 +2,10 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 
-interface Props {
+type Props = {
   title: string;
   description: string;
-}
+};
 
 const Layout: React.FC<Props> = ({ title, description, children }) => {
   return (

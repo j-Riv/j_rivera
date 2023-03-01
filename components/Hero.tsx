@@ -1,19 +1,19 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const t = useTranslations("hero");
 
   return (
     <div className="relative">
       <div
-        className="bg-neutral-400 dark:bg-black pb-12 overflow-y-hidden hero"
+        className="hero overflow-y-hidden bg-neutral-400 pb-12 dark:bg-black"
         style={{ minHeight: 700 }}
       >
-        <div className="bg-neutral-400 dark:bg-black hero__inner">
-          <div className="container mx-auto flex flex-col items-center py-12 sm:py-24 hero__divider">
-            <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-zinc-500 dark:text-white font-black leading-7 md:leading-10 mb-10">
+        <div className="hero__inner bg-neutral-400 dark:bg-black">
+          <div className="hero__divider container mx-auto flex flex-col items-center py-12 sm:py-24">
+            <div className="mb-5 w-11/12 flex-col items-center justify-center sm:mb-10 sm:w-2/3 lg:flex">
+              <h1 className="mb-10 text-center text-2xl font-black leading-7 text-zinc-500 dark:text-white sm:text-3xl md:text-4xl md:leading-10 lg:text-5xl xl:text-6xl">
                 {t("iam")}{" "}
                 <span className="text-black dark:text-zinc-700">j-Riv</span>
               </h1>
@@ -26,18 +26,10 @@ const Hero: React.FC = () => {
                   width={140}
                 />
               </div>
-              <p className="mt-5 sm:mt-10 lg:w-10/12 text-black dark:text-gray-400 font-normal text-center text-sm sm:text-lg">
+              <p className="mt-5 text-center text-sm font-normal text-black dark:text-gray-400 sm:mt-10 sm:text-lg lg:w-10/12">
                 {t("content")}
               </p>
             </div>
-            {/* <div className="flex justify-center items-center">
-              <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 lg:text-xl lg:font-bold  rounded text-white px-4 sm:px-10 border border-indigo-700 py-2 sm:py-4 text-sm">
-                Get Started
-              </button>
-              <button className="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-transparent transition duration-150 ease-in-out hover:border-indigo-600 lg:text-xl lg:font-bold  hover:text-indigo-600 rounded border border-indigo-700 text-indigo-700 px-4 sm:px-10 py-2 sm:py-4 text-sm">
-                Live Demo
-              </button>
-            </div> */}
           </div>
         </div>
       </div>

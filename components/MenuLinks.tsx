@@ -5,7 +5,7 @@ import { MdOutlineLanguage as LanguageIcon } from "react-icons/md";
 import { FaSun as SunIcon, FaMoon as MoonIcon } from "react-icons/fa";
 import { ThemeContext } from "../contexts/theme";
 
-const MenuLinks: React.FC = () => {
+const MenuLinks = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const [isSSR, setIsSSR] = useState(true);
 
@@ -47,10 +47,10 @@ const MenuLinks: React.FC = () => {
 
   return (
     <>
-      <div className="hidden lg:flex gap-1">
+      <div className="hidden gap-1 lg:flex">
         {localeAvailable() && (
           <a
-            className="flex items-center text-sm px-4 py-2 leading-none border border-zinc-300 rounded bg-zinc-300 text-black hover:text-white hover:bg-zinc-600  dark:bg-zinc-600 dark:text-white dark:border-zinc-600 hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0 cursor-pointer"
+            className="mt-4 flex cursor-pointer items-center rounded border border-zinc-300 bg-zinc-300 px-4 py-2 text-sm leading-none text-black  hover:border-transparent hover:bg-zinc-600 hover:text-white dark:border-zinc-600 dark:bg-zinc-600 dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mt-0"
             onClick={handlePush}
           >
             <LanguageIcon className="inline" />: {locale === "en" ? "ES" : "EN"}
@@ -58,7 +58,7 @@ const MenuLinks: React.FC = () => {
         )}
         {!isSSR && (
           <a
-            className="flex items-center text-sm px-4 py-2 lg:mx-1 leading-none border border-zinc-300 rounded bg-zinc-300 text-black hover:text-white hover:bg-zinc-600 dark:bg-zinc-600 dark:text-white dark:border-zinc-600 hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0 cursor-pointer"
+            className="mt-4 flex cursor-pointer items-center rounded border border-zinc-300 bg-zinc-300 px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:border-zinc-600 dark:bg-zinc-600 dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-1 lg:mt-0"
             onClick={handleThemeChange}
           >
             {theme === "dark" ? <SunIcon /> : <MoonIcon />}
@@ -67,31 +67,31 @@ const MenuLinks: React.FC = () => {
       </div>
 
       <Link href="/">
-        <a className="block lg:inline-block text-sm px-4 py-2 lg:mx-2 leading-none rounded text-black hover:text-white hover:bg-zinc-600 dark:text-white hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0">
+        <a className="mt-4 block rounded px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-2 lg:mt-0 lg:inline-block">
           HOME
         </a>
       </Link>
       {pathname === "/" ? (
         <a
           onClick={() => scrollTo("#Contact")}
-          className="block lg:inline-block text-sm px-4 py-2 lg:mx-2 leading-none rounded text-black hover:text-white hover:bg-zinc-600 dark:text-white hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0 cursor-pointer"
+          className="mt-4 block cursor-pointer rounded px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-2 lg:mt-0 lg:inline-block"
         >
           CONTACT
         </a>
       ) : (
         <Link href="/#Contact">
-          <a className="block lg:inline-block text-sm px-4 py-2 lg:mx-2 leading-none rounded text-black hover:text-white hover:bg-zinc-600 dark:text-white hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0">
+          <a className="mt-4 block rounded px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-2 lg:mt-0 lg:inline-block">
             CONTACT
           </a>
         </Link>
       )}
       <Link href="/cv">
-        <a className="block lg:inline-block text-sm px-4 py-2 lg:mx-2 leading-none rounded text-black hover:text-white hover:bg-zinc-600 dark:text-white hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0">
+        <a className="mt-4 block rounded px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-2 lg:mt-0 lg:inline-block">
           CV
         </a>
       </Link>
       <Link href="/blog">
-        <a className="block lg:inline-block text-sm px-4 py-2 lg:mx-2 leading-none rounded text-black hover:text-white hover:bg-zinc-600 dark:text-white hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-4 lg:mt-0">
+        <a className="mt-4 block rounded px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-2 lg:mt-0 lg:inline-block">
           BLOG
         </a>
       </Link>

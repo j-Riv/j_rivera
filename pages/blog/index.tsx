@@ -4,9 +4,9 @@ import { Post } from "../../types/cockpit";
 
 export default Page;
 
-interface ServerProps {
+type ServerProps = {
   params: {};
-}
+};
 
 export async function getServerSideProps({ params }: ServerProps) {
   const postsPerPage = process.env.NEXT_PUBLIC_POSTS_PER_PAGE;

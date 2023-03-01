@@ -3,11 +3,12 @@ import Prism from "prismjs";
 import "prismjs/components/prism-markup-templating";
 import "prismjs/components/prism-php";
 
-interface Props {
-  [key: string]: any;
-}
+type Props = {
+  children: string | JSX.Element | JSX.Element[];
+  className?: string;
+};
 
-const CodeSnippet: React.FC<Props> = ({ className, children }) => {
+const CodeSnippet = ({ className, children }: Props) => {
   const [ssr, setSSR] = useState<boolean>(true);
 
   useEffect(() => {

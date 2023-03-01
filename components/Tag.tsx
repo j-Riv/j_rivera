@@ -12,11 +12,11 @@ import {
 import { BsCpuFill as CpuIcon } from "react-icons/bs";
 import { SiBlueprint as PrinterIcon } from "react-icons/si";
 
-interface Props {
+type Props = {
   tag: string;
-}
+};
 
-const Tag: React.FC<Props> = ({ tag }) => {
+const Tag = ({ tag }: Props) => {
   const icon = () => {
     if (tag === "macOS" || tag === "iOS") {
       return <AppleIcon className="inline" />;
@@ -47,7 +47,7 @@ const Tag: React.FC<Props> = ({ tag }) => {
 
   return (
     <Link href={`/blog/category/${tag}`}>
-      <a className="flex items-center gap-1 bg-red-800 hover:bg-red-900 py-2 px-4 rounded text-white">
+      <a className="flex items-center gap-1 rounded bg-red-800 py-2 px-4 text-white hover:bg-red-900">
         {icon()}
         {` ${tag}`}
       </a>

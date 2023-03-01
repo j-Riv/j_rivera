@@ -4,11 +4,11 @@ import { Post } from "../../../../types/cockpit";
 
 export default Page;
 
-interface ServerProps {
+type ServerProps = {
   params: {
     tag: string;
   };
-}
+};
 
 export async function getServerSideProps({ params }: ServerProps) {
   const data: { posts: Post[]; total: number } = await getAllPostsByCategory(

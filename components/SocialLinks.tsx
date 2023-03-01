@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   FaGithub as GithubIcon,
   FaLinkedin as LinkedInIcon,
@@ -7,9 +6,9 @@ import {
   FaTwitter as TwitterIcon,
 } from "react-icons/fa";
 
-const SocialLinks: React.FC = () => {
+const SocialLinks = () => {
   return (
-    <div className="flex gap-5 text-2xl py-4">
+    <div className="flex gap-5 py-4 text-2xl">
       <a
         className="text-black dark:text-white"
         href="https://www.linkedin.com/in/jose-alfredo-rivera-turcios/"

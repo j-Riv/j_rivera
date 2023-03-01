@@ -19,28 +19,29 @@ const useToast = (message: string, variant = "success", style = {}) => {
   switch (variant) {
     case "success":
       toastStyle = "bg-green-800 text-white";
-      icon = <SuccessIcon className="h-[25px] w-[25px] mr-[10px] text-white" />;
+      icon = <SuccessIcon className="mr-[10px] h-[25px] w-[25px] text-white" />;
       break;
     case "error":
       toastStyle = "bg-red-800 text-white";
-      icon = <ErrorIcon className="h-[25px] w-[25px] mr-[10px] text-white" />;
+      icon = <ErrorIcon className="mr-[10px] h-[25px] w-[25px] text-white" />;
       break;
     case "info":
       toastStyle = "bg-grey-800 text-white";
-      icon = <InfoIcon className="h-[25px] w-[25px] mr-[10px] text-white" />;
+      icon = <InfoIcon className="mr-[10px] h-[25px] w-[25px] text-white" />;
       break;
     case "warning":
       toastStyle = "bg-yellow-800 text-white";
-      icon = <WarningIcon className="h-[25px] w-[25px] mr-[10px] text-white" />;
+      icon = <WarningIcon className="mr-[10px] h-[25px] w-[25px] text-white" />;
       break;
     default:
       break;
   }
+
   const ToastComponent = () => {
     return (
       <React.Fragment>
         <div
-          className={`${toastStyle} min-w-[250px] -ml-[125px] rounded text-black text-center p-4 fixed z-10 left-[50%] bottom-[200px] ${
+          className={`${toastStyle} fixed left-[50%] bottom-[200px] z-10 -ml-[125px] min-w-[250px] rounded p-4 text-center text-black ${
             show ? "block" : "hidden"
           }`}
         >

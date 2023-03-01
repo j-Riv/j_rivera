@@ -1,11 +1,11 @@
 import Head from "next/head";
 
-interface Props {
+type Props = {
   title: string;
   description: string;
-}
+};
 
-const Header: React.FC<Props> = ({ title, description }) => {
+const Header = ({ title, description }: Props) => {
   return (
     <Head>
       <title>{title}</title>

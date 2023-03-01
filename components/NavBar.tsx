@@ -8,7 +8,7 @@ import { FaSun as SunIcon, FaMoon as MoonIcon } from "react-icons/fa";
 import { ThemeContext } from "../contexts/theme";
 import MenuLinks from "./MenuLinks";
 
-const NavBar: React.FC = () => {
+const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
   const [isSSR, setIsSSR] = useState(true);
 
@@ -43,8 +43,8 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between flex-wrap bg-neutral-400 dark:bg-black p-6">
-      <div className="flex items-center flex-shrink-0 text-black dark:text-white mr-6">
+    <nav className="sticky top-0 z-50 flex flex-wrap items-center justify-between bg-neutral-400 p-6 dark:bg-black">
+      <div className="mr-6 flex flex-shrink-0 items-center text-black dark:text-white">
         <Link href="/">
           <a>
             <Image
@@ -61,7 +61,7 @@ const NavBar: React.FC = () => {
       <div className="flex gap-2 lg:hidden">
         {localeAvailable() && (
           <a
-            className="flex items-center text-sm px-4 py-2 leading-none border border-zinc-300 rounded bg-zinc-300 text-black hover:text-white hover:bg-zinc-600  dark:bg-zinc-600 dark:text-white dark:border-zinc-600 hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-0 cursor-pointer"
+            className="mt-0 flex cursor-pointer items-center rounded border border-zinc-300 bg-zinc-300 px-4 py-2 text-sm leading-none text-black  hover:border-transparent hover:bg-zinc-600 hover:text-white dark:border-zinc-600 dark:bg-zinc-600 dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white"
             onClick={handlePush}
           >
             <LanguageIcon className="inline" />: {locale === "en" ? "ES" : "EN"}
@@ -69,21 +69,21 @@ const NavBar: React.FC = () => {
         )}
         {!isSSR && (
           <a
-            className="flex items-center text-sm px-4 py-2 lg:mx-1 leading-none border border-zinc-300 rounded bg-zinc-300 text-black hover:text-white hover:bg-zinc-600 dark:bg-zinc-600 dark:text-white dark:border-zinc-600 hover:border-transparent dark:hover:text-white dark:hover:bg-zinc-800 mt-0 cursor-pointer"
+            className="mt-0 flex cursor-pointer items-center rounded border border-zinc-300 bg-zinc-300 px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:border-zinc-600 dark:bg-zinc-600 dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-1"
             onClick={handleThemeChange}
           >
             {theme === "dark" ? <SunIcon /> : <MoonIcon />}
           </a>
         )}
         <button
-          className="flex items-center px-3 py-2 rounded text-black dark:text-white dark:hover:text-white dark:hover:bg-zinc-800"
+          className="flex items-center rounded px-3 py-2 text-black dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white"
           onClick={toggleMenu}
         >
           <GiHamburgerMenu />
         </button>
       </div>
       <div
-        className={`w-full flex-grow lg:flex lg:items-start lg:w-auto lg:justify-end transition-height ease-in-out duration-500 h-100 ${
+        className={`transition-height h-100 w-full flex-grow duration-500 ease-in-out lg:flex lg:w-auto lg:items-start lg:justify-end ${
           navbarOpen ? "flex flex-col" : "hidden"
         }`}
       >
