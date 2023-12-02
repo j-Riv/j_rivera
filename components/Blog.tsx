@@ -8,9 +8,9 @@ type Props = {
 const Blog = ({ posts }: Props) => {
   return (
     <div className="-mt-[300px] bg-zinc-300 py-10 dark:bg-zinc-900">
-      <h2 className="relative my-4 text-center text-3xl font-bold uppercase text-white dark:text-white">
+      {/* <h2 className="relative my-4 text-center text-3xl font-bold uppercase text-white dark:text-white">
         Blog
-      </h2>
+      </h2> */}
 
       <div className="container relative">
         <div className="grid grid-rows-1 gap-4 py-4 md:grid-cols-1 lg:grid-cols-3">

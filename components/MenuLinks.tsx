@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 import { MdOutlineLanguage as LanguageIcon } from "react-icons/md";
 import { FaSun as SunIcon, FaMoon as MoonIcon } from "react-icons/fa";
 import { ThemeContext } from "../contexts/theme";
 
 const MenuLinks = () => {
+  const t = useTranslations("nav");
   const { theme, setTheme } = useContext(ThemeContext);
   const [isSSR, setIsSSR] = useState(true);
 
@@ -68,7 +70,7 @@ const MenuLinks = () => {
 
       <Link href="/">
         <a className="mt-4 block rounded px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-2 lg:mt-0 lg:inline-block">
-          HOME
+          {t("home")}
         </a>
       </Link>
       {pathname === "/" ? (
@@ -76,18 +78,18 @@ const MenuLinks = () => {
           onClick={() => scrollTo("#Contact")}
           className="mt-4 block cursor-pointer rounded px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-2 lg:mt-0 lg:inline-block"
         >
-          CONTACT
+          {t("contact")}
         </a>
       ) : (
         <Link href="/#Contact">
           <a className="mt-4 block rounded px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-2 lg:mt-0 lg:inline-block">
-            CONTACT
+            {t("contact")}
           </a>
         </Link>
       )}
       <Link href="/cv">
         <a className="mt-4 block rounded px-4 py-2 text-sm leading-none text-black hover:border-transparent hover:bg-zinc-600 hover:text-white dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white lg:mx-2 lg:mt-0 lg:inline-block">
-          CV
+          {t("resume")}
         </a>
       </Link>
       <Link href="/blog">
