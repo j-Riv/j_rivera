@@ -20,6 +20,7 @@ export async function getServerSideProps({ params }: ServerProps) {
     props: {
       posts: data.posts,
       total: data.total,
+      messages: require(`../../../../locales/en.json`),
     },
   };
 }

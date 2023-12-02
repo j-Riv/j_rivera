@@ -42,9 +42,10 @@ type ServerProps = {
   params: {
     pid: string;
   };
+  locale: string;
 };
 
-export async function getServerSideProps({ params }: ServerProps) {
+export async function getServerSideProps({ params, locale }: ServerProps) {
   const postsPerPage = process.env.NEXT_PUBLIC_POSTS_PER_PAGE;
   const skip = params.pid ? (Number(params.pid) - 1) * postsPerPage : 0;
   const data: { posts: Post[]; total: number } = await getAllPosts(
@@ -56,6 +57,7 @@ export async function getServerSideProps({ params }: ServerProps) {
     props: {
       posts: data.posts,
       total: data.total,
+      messages: require(`../../locales/${locale}.json`),
     },
   };
 }

@@ -49,14 +49,16 @@ type ServerProps = {
   params: {
     slug: string;
   };
+  locale: string;
 };
 
-export async function getServerSideProps({ params }: ServerProps) {
+export async function getServerSideProps({ params, locale }: ServerProps) {
   const data: Post = await getPostBySlug(params.slug);
 
   return {
     props: {
       post: data,
+      messages: require(`../../../locales/${locale}.json`),
     },
   };
 }
