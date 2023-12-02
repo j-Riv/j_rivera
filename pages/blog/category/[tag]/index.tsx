@@ -8,9 +8,10 @@ type ServerProps = {
   params: {
     tag: string;
   };
+  locale: string;
 };
 
-export async function getServerSideProps({ params }: ServerProps) {
+export async function getServerSideProps({ params, locale }: ServerProps) {
   const data: { posts: Post[]; total: number } = await getAllPostsByCategory(
     params.tag,
     "1"
@@ -20,7 +21,7 @@ export async function getServerSideProps({ params }: ServerProps) {
     props: {
       posts: data.posts,
       total: data.total,
-      messages: require(`../../../../locales/en.json`),
+      messages: require(`../../../../locales/${locale}.json`),
     },
   };
 }
