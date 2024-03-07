@@ -38,9 +38,10 @@ const BlogPost = ({ post, hideTags }: Props) => {
       </h3>
       {display && (
         <div className="tags flex flex-wrap gap-2">
-          {post.tags.map((tag: string, i: number) => (
-            <Tag key={i} tag={tag} />
-          ))}
+          {post?.tags &&
+            post.tags.map((tag: string, i: number) => (
+              <Tag key={i} tag={tag} />
+            ))}
         </div>
       )}
 
